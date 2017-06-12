@@ -1,0 +1,27 @@
+<div class="container login">
+    <div class="row-fluid user-row">
+        <img ng-src="images/logo.png" class="img-responsive" alt="Conxole Admin"/>
+    </div>
+    <div class="panel-body">
+        <form class="form-signin" accept-charset="UTF-8" role="form" ng-submit="login();">
+            <label class="panel-login">
+                <div class="login_result"></div>
+            </label>
+            <!-- EMAIL -->
+            <div class="form-group has-feedback {{((email) && (email.indexOf('@') !== -1) ? 'has-success' : 'has-error')}}">
+                <input type="email" class="form-control"
+                       placeholder="Digite seu e-mail" ng-model="email" required/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+
+            <!-- SENHA -->
+            <div class="form-group has-feedback {{(password ? 'has-success' : 'has-error')}}">
+                <input type="password" class="form-control" placeholder="Digite sua senha"
+                       ng-model="password" required/>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <br><br>
+            <input class="btn btn-lg btn-block botao" type="submit" id="login" value="Login »">
+        </form>
+    </div>
+</div>

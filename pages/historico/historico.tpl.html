@@ -1,0 +1,9 @@
+<!-- MENU -->
+<menu-app title="Histórico"></menu-app>
+
+<div class="col-lg-12">
+    <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+        <img ng-repeat='image in images' ng-src='http://placehold.it/225x250&text={{image}}'>
+        <input class="btn btn-lg btn-block botao" type="submit" value="{{image}} »">
+    </div>
+</div>

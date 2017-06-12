@@ -1,0 +1,42 @@
+<!-- MENU -->
+<menu-app title="Criar votação"></menu-app>
+
+<div class="container login -align-center">
+    <div class="row-fluid user-row">
+        <img ng-src="images/logo.png" class="img-responsive" alt="Conxole Admin"/>
+    </div>
+    <div class="panel-body">
+        <form class="form-signin" accept-charset="UTF-8" role="form" ng-submit="login();">
+            <label class="panel-login">
+                <div class="login_result"></div>
+            </label>
+            <!-- NOME -->
+            <div class="form-group has-feedback {{((votacao.nome) ? 'has-success' : 'has-error')}}">
+                <label class="label-input" for="nomeVotacao">Nome:</label>
+                <input type="email" class="form-control" id="nomeVotacao"
+                       placeholder="Digite um nome para essa votação" ng-model="nome" required/>
+            </div>
+
+            <!-- DESCRICAO -->
+            <div class="form-group has-feedback {{(votacao.descricao ? 'has-success' : 'has-error')}}">
+                <label class="label-input" for="descricaoVotacao">Descricao:</label>
+                <textarea class="form-control" id="descricaoVotacao" rows="3" ng-model="votacao.descricao"></textarea>
+            </div>
+            <br><br>
+
+            <label class="label-input">Candidatos:</label>
+            <br><br>
+
+
+            <div ng-repeat="candidato in votacao.candidatos">
+                <div class="form-group has-feedback {{(votacao.candidatos[$index] ? 'has-success' : 'has-error')}}">
+                    <label class="label-input">Nome do candidato {{$index + 1}}:</label>
+                    <input type="email" class="form-control"
+                           placeholder="Digite um nome para essa votação" ng-model="votacao.candidatos[$index].nome"/>
+                </div>
+            </div>
+            <br><br>
+            <input class="btn btn-lg btn-block botao" value="+ Adicionar candidato" ng-click="adicionarCandidato();">
+        </form>
+    </div>
+</div>
